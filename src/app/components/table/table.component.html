@@ -1,0 +1,61 @@
+<section class="container">
+    <div class="container__header">
+        <input type="text" placeholder="Buscar Producto" class="container__text">
+    </div>
+    <div class="container__body">
+        <div class="container__scroller">
+            <table class="container__table">
+                <thead class="container__head">
+                    <tr class="container__colums">
+                        <th class="container__cell">Logo</th>
+                        <th class="container__cell">Nombre del producto</th>
+                        <th class="container__cell">Descripción
+                            <img src="assets/icon-info.svg" alt="Informacion" class="container__icon">
+                        </th>
+                        <th class="container__cell">Fecha de liberación
+                            <img src="assets/icon-info.svg" alt="Informacion" class="container__icon">
+                        </th>
+                        <th class="container__cell">Fecha de restructuración
+                            <img src="assets/icon-info.svg" alt="Informacion" class="container__icon">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="container__tbody">
+                    <tr class="container__row">
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                    </tr>
+                    <tr>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                    </tr>
+                    <tr>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                        <td class="container__cell">Hola</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container__select">
+            <p class="container__results">Cantidas de registros</p>
+            <select
+              class="container__quantity"
+              [(ngModel)]="select"
+            >
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+    </div>
+    
+</section>
