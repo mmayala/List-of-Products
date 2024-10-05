@@ -34,6 +34,7 @@
    }
    &__head{
     background-color:#f2f9f9;
+    text-align: left;
    }
    &__columns{
     background-color: #f2f9f9;
@@ -41,11 +42,14 @@
    &__cell{
     font-size: 12px;
     border-bottom: 2px solid #f2f9f9;
-    text-align: center;
     padding: 8px;
 }
 &__icon{
     width: 10px;
+}
+&__logo{
+  height: 20px;
+  
 }
 &__select {
     display: flex;
@@ -59,5 +63,15 @@
     text-align: center;
     width: 56px;
     height: 24px;
+  }
+}
+.alert{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  &__message{
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
   }
 }

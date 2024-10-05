@@ -1,10 +1,16 @@
 <section class="container">
     <div class="container__header">
-        <input type="text" placeholder="Buscar Producto" class="container__text">
+        <input 
+        type="text" 
+        placeholder="Buscar Producto" 
+        class="container__text" 
+        [(ngModel)]="filterName" 
+        (input)="searchProduct()"
+        >
     </div>
     <div class="container__body">
         <div class="container__scroller">
-            <table class="container__table">
+            <table class="container__table" *ngIf="productFiltered.length > 0">
                 <thead class="container__head">
                     <tr class="container__colums">
                         <th class="container__cell">Logo</th>
@@ -21,41 +27,30 @@
                     </tr>
                 </thead>
                 <tbody class="container__tbody">
-                    <tr class="container__row">
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                    </tr>
-                    <tr>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                    </tr>
-                    <tr>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
-                        <td class="container__cell">Hola</td>
+                    <tr class="container__row" *ngFor="let product of productFiltered">
+                        <td class="container__cell">
+                            <img class="container__logo" [src]="product.logo" alt="image-producto" *ngIf="product.logo">
+                        </td>
+                        <td class="container__cell">{{ product.name }}</td>
+                        <td class="container__cell">{{ product.description }}</td>
+                        <td class="container__cell">{{ dateCurrent[0] }}</td>
+                        <td class="container__cell">{{ dateCurrent[1] }}</td>
                     </tr>
                 </tbody>
             </table>
+            <div class="alert" *ngIf="productFiltered.length === 0">
+                <p class="alert__message">No hay registros disponibles</p>
+              </div>
         </div>
         <div class="container__select">
-            <p class="container__results">Cantidas de registros</p>
+            <p class="container__results">Cantidad de registros:{{productFiltered.length}}</p>
             <select
               class="container__quantity"
               [(ngModel)]="select"
+              (change)="searchProduct()"
             >
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="20">20</option>
+              <option [value]="option" *ngFor="let option of optionSelect">{{option}}</option>
             </select>
           </div>
     </div>
-    
 </section>
